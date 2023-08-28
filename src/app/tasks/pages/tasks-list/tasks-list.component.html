@@ -1,0 +1,6 @@
+<tasks-add-task></tasks-add-task>
+<div class="grid grid-cols-3 pt-2 pb-2">
+  <div *ngFor="let task of tasks">
+    <tasks-task-card [task]="task"></tasks-task-card>
+  </div>
+</div>

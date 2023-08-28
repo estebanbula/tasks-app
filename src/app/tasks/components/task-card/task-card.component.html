@@ -1,0 +1,45 @@
+<div class="border border-gray-200 pt-6 pl-6 pr-6 rounded-lg m-1 hover:ring-1 hover:ring-slate-400">
+  <div class="grid grid-cols-4 grid-flow-col pb-4">
+    <div class="col-span-1 w-12 flex flex-col text-center leading-none">
+      <span class="text-gray-800 pb-2 mb-2 border-b-2 border-gray-200">
+        {{task.created | date: "MMM" }}
+      </span>
+      <span class="font-medium text-lg text-gray-800 title-font leading-none">
+        {{task.created | date: "dd" }}
+      </span>
+    </div>
+    <div class="flex-grow col-span-3">
+      <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+        {{task.title}}
+      </h2>
+      <p class="leading-relaxed text-base">
+        {{task.detail}}
+      </p>
+    </div>
+  </div>
+  <div class="flex justify-around pb-1 pt-2 mt-2 border-t-2 border-gray-200">
+    <button class="p-2">
+      <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-white" fill="none"
+           viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 5.917 5.724 10.5 15 1.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="1"/>
+      </svg>
+    </button>
+    <button class="p-2">
+      <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-white" fill="none"
+           viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M15 17v1a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2M6 1v4a1 1 0 0 1-1 1H1m13.14.772 2.745 2.746M18.1 5.612a2.086 2.086 0 0 1 0 2.953l-6.65 6.646-3.693.739.739-3.692 6.646-6.646a2.087 2.087 0 0 1 2.958 0Z"
+          stroke="black" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1"/>
+      </svg>
+    </button>
+    <button class="p-2">
+      <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-white" fill="none"
+           viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+        <path d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" stroke="black" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="1"/>
+      </svg>
+    </button>
+  </div>
+</div>
