@@ -19,7 +19,6 @@ export class TasksService {
   }
 
   public saveTask(task: Task): Observable<Task> {
-    console.log(task)
     return this._httpClient.post<Task>(`${this.baseUrl}/tasks`, task);
   }
 }

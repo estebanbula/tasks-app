@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {TasksService} from "../../service/tasks.service";
 import {Task} from "../../interfaces/task.interface";
+import {Router} from "@angular/router";
+import {TasksListComponent} from "../../pages/tasks-list/tasks-list.component";
 
 @Component({
   selector: 'tasks-add-task',
@@ -18,7 +20,9 @@ export class AddTaskComponent {
   });
 
   constructor(private _formBuilder: FormBuilder,
-              private _taskService: TasksService) {
+              private _taskService: TasksService,
+              private _router: Router,
+              private _taskList: TasksListComponent) {
   }
 
   get task(): Task {
@@ -26,8 +30,11 @@ export class AddTaskComponent {
   }
 
   public onSave(): void {
-    console.log(this.task)
-    this._taskService.saveTask(this.task);
+    this._taskService.saveTask(this.task)
+      .subscribe(hero => {
+        this._router.navigate(["tasks/list"]);
+        this._taskList.ngOnInit()
+      });
   }
 
 }

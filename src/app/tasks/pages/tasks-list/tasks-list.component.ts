@@ -16,14 +16,11 @@ export class TasksListComponent implements OnInit {
 
   ngOnInit(): void {
     this._tasksService.getTasks()
-      .pipe(
-        tap(task => console.log(task))
-      )
       .subscribe(tasks => this.tasks = this.toSorted(tasks));
   }
 
   private toSorted(task: Task[]): Task[] {
-    return task.sort((a, b) => (b.created > b.created) ? 1 : -1);
+    return task.sort((a, b) => (a.created > b.created) ? 1 : -1);
   }
 
 }
