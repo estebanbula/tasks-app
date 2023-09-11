@@ -21,4 +21,16 @@ export class TasksService {
   public saveTask(task: Task): Observable<Task> {
     return this._httpClient.post<Task>(`${this.baseUrl}/tasks`, task);
   }
+
+  public deleteTask(id: string): Observable<Task> {
+    return this._httpClient.delete<Task>(`${this.baseUrl}/tasks/${id}`);
+  }
+
+  public editTask(id: string, task: Task): Observable<Task> {
+    return this._httpClient.put<Task>(`${this.baseUrl}/tasks/${id}`, task);
+  }
+
+  public taskById(id: string): Observable<Task> {
+    return this._httpClient.get<Task>(`${this.baseUrl}/tasks/${id}`);
+  }
 }
